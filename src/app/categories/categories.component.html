@@ -1,0 +1,66 @@
+<div class="pageDesc">
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--6-col">
+  <div class="container">
+    
+      <mat-card>
+        <form [formGroup]="addCat">
+      <mat-form-field class="width">
+        
+        <input  formControlName="categoryName" type="text" matInput placeholder="Category Name" >
+      </mat-form-field>
+       <mat-form-field class="width">
+          <textarea  formControlName="categoryDescription" matInput placeholder="Category Description" id="" cols="30" rows="10"></textarea>
+            </mat-form-field>
+            <input (change)="upload($event)" formControlName="file" type="file" >
+          </form>
+          <br>
+          <br>
+          <br>
+            <button mat-flat-button (click)="addCategory()" color="accent" style="margin-right: 20px;">Add Category</button>
+          </mat-card>  
+    
+  
+  
+  </div>
+</div>
+
+
+  <div class="mdl-cell mdl-cell--6-col">
+    <div class="table">
+    <!-- table -->
+    <table mat-table [dataSource]="listData" class="mat-elevation-z2">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="categoryName">
+          <th mat-header-cell *matHeaderCellDef> Category Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.categoryName}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="categoryDescription">
+          <th mat-header-cell *matHeaderCellDef>Category Description</th>
+          <td mat-cell *matCellDef="let element"> {{element.categoryDescription}} </td>
+        </ng-container>
+        <ng-container matColumnDef="buttons">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button class="editIcon" (click)="edit(element)">
+                  <mat-icon matSuffix>edit</mat-icon>
+                </button>
+                <button mat-icon-button  class="trashIcon" (click)="Delete(element.pId)">
+                  <mat-icon matSuffix>delete</mat-icon>
+                </button>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      </div>
+    </div>
+</div>
+</div>

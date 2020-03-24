@@ -1,0 +1,19 @@
+
+<div>
+        <form [formGroup]="editObj.addCat">
+            <mat-form-field class="example-full-width">
+                 <input formControlName="categoryName" matInput placeholder="category Name">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <textarea formControlName="categoryDescription" matInput placeholder="category Description"></textarea>
+            </mat-form-field>
+                      <br>
+                      <input type="file" accept="image/*"  class="formControl"  (change)="getImage($event)">
+                      <br>
+                      <br>
+                      <mat-progress-bar mode="determinate" [value]="Progress"></mat-progress-bar>
+    <br>
+
+        </form>
+        <button mat-flat-button color="accent"  class="butn" type="submit" (click)="onAdds()" >Add Items</button>
+    </div>

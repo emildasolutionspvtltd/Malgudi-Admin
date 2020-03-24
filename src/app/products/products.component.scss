@@ -1,0 +1,79 @@
+.container{
+    padding: 20px;
+    
+}
+.addButton{
+    float: right;
+}
+.search{
+    float:left;
+}
+.upperContainer{
+    clear: right;
+}
+.customCard{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2px;
+    position: relative;
+
+}
+.productImage2{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+
+}
+
+img{
+    width: 100%;
+
+}
+
+.imgClass{
+    
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      
+}
+.mat-card{
+    width: 100%;
+    height: 18em; 
+    padding: 20px;
+}
+
+.but{
+ text-align: left;
+    
+
+}
+
+.textWrap{
+
+    padding: 0 16px;
+    word-wrap: break-word;
+}
+
+.trashIcon{
+    color: red;
+   float:  right;
+}
+
+
+
+
+
+
+.buttonWrap{
+    position: absolute;
+    width: 100%;
+
+}
+.but:hover{
+background-color:black;
+color: white;
+}

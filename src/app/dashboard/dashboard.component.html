@@ -1,0 +1,41 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer [mode]="(screenWidth > 970) ? 'side' : 'over'" class="siders"  opened>
+
+  <div class="logoContainer">
+    <img src="" alt="">
+  </div>
+  <div class="profile">
+    <img class="profilePic" [src]="UserData?.photoURL" alt="">
+    <br>
+    <p>{{this.UserData?.displayName}}</p>
+    <br>
+    <br>
+<ul class="blockUl">
+
+
+  <li class="blockLi"  routerLink="/dash/products"  routerLinkActive="active" ><a><mat-icon aria-hidden="false" aria-label="Example user verified icon;">map</mat-icon>Products</a></li>
+  <li class="blockLi"  routerLink="/dash/orders" routerLinkActive="active"><a ><mat-icon aria-hidden="false" aria-label="Example user verified icon;">shopping_cart</mat-icon>Orders</a></li>
+  <li class="blockLi" routerLink="/dash/categories" routerLinkActive="active" ><a ><mat-icon aria-hidden="false" aria-label="Example user verified icon;">category</mat-icon>Categories</a></li>
+  <li class="blockLi" (click)="logout()"><a ><mat-icon aria-hidden="false" aria-label="Example user verified icon;">lock</mat-icon>logout</a></li>
+
+</ul>
+
+
+
+  </div>
+
+
+
+
+  </mat-drawer>
+  <mat-drawer-content class="container"> 
+      <mat-toolbar ><span class="remove" >MALGUDI</span> 
+
+          <span class="example-spacer"></span>
+          <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon class="" aria-hidden="false" aria-label="Example user verified icon">dehaze</mat-icon>
+        </button>
+      </mat-toolbar>
+    <router-outlet ></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

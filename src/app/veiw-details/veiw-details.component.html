@@ -1,0 +1,61 @@
+<div class="parent" #parent>
+
+<h5>Delivery Details</h5>
+<table class="tab1">
+    <tr>
+        <td>User Name :</td>
+        <td>{{user?.firstName}}{{user?.lastName}}</td>
+    </tr>
+    <tr>
+        <td>Email Id :</td>
+        <td>{{user?.email}}</td>
+    </tr>
+    <tr>
+        <td>order Id :</td>
+        <td>{{orders?.orderId}}</td>
+    </tr>
+    <tr>
+        <td>total price : </td>
+        <td>{{orders?.totalOrderPrice | currency:'EUR':'symbol'}}</td>
+    </tr>
+    <tr>
+        <td>Address : </td>
+        <td>{{address?.companyName}} {{address?.companyAddress}}</td>
+    </tr>
+    <tr>
+        <td>Phone Number : </td>
+        <td> {{address?.phoneNumber}}</td>
+    </tr>
+</table>  
+<h5>Product Details</h5>
+<table class="tab">
+    <tr>
+        <td>Product Id</td>
+        <td>Product Name</td>
+        <td>Quantity</td>
+    </tr>
+    <tr *ngFor="let productItem of orders?.orderItem">
+     <td>{{productItem.prodId}}</td>
+     <td>{{productItem.prodName}}</td>
+     <td>{{productItem.prodQuantity}}</td>
+    </tr>
+</table>  
+</div>      
+<div style="text-align:center;padding: 5px;">
+    status : 
+    <mat-form-field>
+        <mat-select (selectionChange)="update(orders?.pushKey)" [(ngModel)]="recentStatus" [value]="orders?.status">
+          <mat-option value="Pending">
+           Pending
+          </mat-option>
+          <mat-option value="Delivered">
+            Delivered
+           </mat-option>
+        </mat-select>
+      </mat-form-field>
+<br>
+      <button color="accent" mat-raised-button (click)="downloadPdf()">Download PDF</button>
+</div>
+
+
+

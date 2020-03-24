@@ -1,0 +1,30 @@
+
+<div>
+    <form [formGroup]="editObj.form">
+            <mat-form-field class="example-full-width">
+                    <input formControlName="pName" matInput placeholder="Product Name">
+                  </mat-form-field><br>
+                  <mat-form-field class="example-full-width">
+                    <textarea formControlName="pDesc" matInput placeholder="Product Description"></textarea>
+                  </mat-form-field><br>
+                 <mat-form-field calss="example-half-width">
+                   <input type="Number" formControlName="price" matInput placeholder="Price">
+                 </mat-form-field>
+                 <mat-form-field style="margin-left:20px" calss="example-half-width">
+                    <input type="Number" formControlName="pQuant"  matInput placeholder="Quantity">
+                  </mat-form-field>
+                  
+
+
+
+
+
+
+                  <input type="file" accept="image/*"  class="formControl"  (change)="getImage($event)">
+                  <br>
+                  <br>
+                  <mat-progress-bar mode="determinate" [value]="Progress"></mat-progress-bar>
+<br>
+                </form>
+    <button class="butn" type="submit" (click)="onAdds()" mat-flat-button color="accent" >Add Items</button>
+</div>

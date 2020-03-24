@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div>
+    <button mat-flat-button  routerLink="/dash/products"> <mat-icon aria-hidden="false" aria-label="Example user verified icon;">arrow_back</mat-icon></button>
+  </div>
+<br>
+    <mat-card style="background: white;">
+  
+  
+
+  
+  <form [formGroup]="addProduct" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input formControlName="prodName" matInput placeholder="Product Name">
+    </mat-form-field><br>
+      <mat-form-field  class="example-full-width">
+        <input type="Number" formControlName="prodId" matInput placeholder="Product Id">
+      </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+      <textarea formControlName="prodDescription" matInput placeholder="Product Description"></textarea>
+    </mat-form-field><br>
+   <mat-form-field calss="example-half-width">
+     <input type="Number" formControlName="prodPrice" matInput placeholder="Price">
+   </mat-form-field>
+   <mat-form-field style="margin-left:20px" calss="example-half-width">
+      <input type="Number" formControlName="prodQuantity"  matInput placeholder="Quantity">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose Category</mat-label>
+      <mat-select formControlName="prodCategory" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let category of Category" [value]=category.categoryName>
+          {{ category.categoryName}}
+        </mat-option>
+      </mat-select>
+  
+  
+  
+    </mat-form-field>
+    <button class="butn" type="submit" (click)="onAdds()" mat-button color="primary">Add Items</button>
+    <br>
+  
+  
+    <input (change)="upload($event)" formControlName="file" type="file" >
+    <br>
+    <br>
+    <br>
+    <mat-progress-bar mode="determinate" [value]="Progress"></mat-progress-bar>
+    <br>
+    <br>
+    <button mat-flat-button (click)="addProducts()" color="accent">Submit</button>
+  </form>
+  
+      
+  </mat-card>
+  </div>
